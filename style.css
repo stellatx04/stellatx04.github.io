@@ -1,0 +1,108 @@
+
+
+/* Basic page style resets */
+* {
+  box-sizing: border-box;
+}
+[hidden] {
+  display: none !important;
+}
+
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  ustify-content: space-between;
+  gap: 20px;
+}
+
+.card {
+  flex: 1 1 calc(50% - 20px);
+  padding: 15px;
+  background-color: #fff;
+  border: 1px solid green;
+  text-align: center;
+  transition: border-color 0.3s ease;
+}
+
+
+.cards-grid-container {
+  display: none;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+
+}
+
+.card-header h2 {
+  font-size: 1.5em;
+  color: #333;
+  margin: 0;
+}
+
+.card-header h1 {
+  font-size: 1em;
+  color: #333;
+  margin: 0;
+}
+
+
+#toggle-switch {
+  display: none;
+}
+
+label[for="toggle-switch"] {
+  cursor: pointer;
+  background-color: #eee;
+  padding: 8px 12px;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.hidden-content {
+  display: none;
+  margin-top: 10 px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+}
+
+#toggle-switch:checked + label + .hidden-content {
+  display: block;
+}
+
+
+.toggle-container {
+  max-width: 400px;
+  margin: 2rem auto;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.toggle-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1rem;
+  background-color: #f4f4f4;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+
+
+
+    /* Media query for responsiveness (optional, but recommended) */
+    @media (max-width: 768px) {
+        .card {
+            flex: 1 1 100%; /* Stacks cards vertically on smaller screens */
+        }
+    }
+
+
+   
+
+    
