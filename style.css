@@ -22,8 +22,22 @@
   background-color: #fff;
   border: 1px solid green;
   text-align: center;
-  transition: border-color 0.3s ease;
+  transition: background-color 0.3s ease;
+  height: 200 px;
 }
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2); /* Deeper shadow on hover */
+    transform: translateY(-5px); /* Lift the card slightly */
+    transition: all 0.3s ease-in-out; /* Smooth transition for changes */
+}
+
+
+.card.active {
+  background-color: darkgreen;
+  transform: scale(0.98);
+}
+
 
 
 .cards-grid-container {
@@ -36,7 +50,7 @@
 .card-header h2 {
   font-size: 1.5em;
   color: #333;
-  margin: 0;
+  margin-top: auto;
 }
 
 .card-header h1 {
@@ -93,9 +107,34 @@ label[for="toggle-switch"] {
 }
 
 
+.seen:not(:open) {
+  summary {
+      &::marker {
+        content: "\00D7";
+      }
+
+      &::after {
+        content: "not seen";
+      }
+    }
+  }
 
 
-    /* Media query for responsiveness (optional, but recommended) */
+.seen:open {
+    summary {
+      &::marker {
+        content: "\2713";
+      }
+
+      &::after {
+        color: green;
+        content: "seen!";
+      }
+
+    }
+
+  }
+
     @media (max-width: 768px) {
         .card {
             flex: 1 1 100%; /* Stacks cards vertically on smaller screens */
