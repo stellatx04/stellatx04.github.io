@@ -107,38 +107,28 @@ label[for="toggle-switch"] {
 }
 
 
-.seen:not(:open) {
-  summary {
-      &::marker {
-        content: "\00D7";
-      }
+.seen:not(:open) > summary::marker {
+  content: "\00D7"; /* × */
+}
 
-      &::after {
-        content: "not seen";
-      }
-    }
-  }
+.seen:not(:open) > summary::after {
+  content: "not seen";
+}
 
+.seen:open > summary::marker {
+  content: "\2713"; /* ✓ */
+}
 
-.seen:open {
-    summary {
-      &::marker {
-        content: "\2713";
-      }
-
-      &::after {
-        color: green;
-        content: "seen!";
-      }
-
-    }
-
-  }
+.seen:open > summary::after {
+  content: "seen!";
+  color: green;
+}
 
     @media (max-width: 768px) {
         .card {
             flex: 1 1 100%; /* Stacks cards vertically on smaller screens */
         }
+
     }
 
 
