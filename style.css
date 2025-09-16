@@ -107,20 +107,23 @@ label[for="toggle-switch"] {
 }
 
 
-.seen:not(:open) > summary::marker {
-  content: "\00D7"; /* × */
+.seen:not([open]) .status-icon::before {
+  content: "×";
+  margin-right: 5px;
 }
 
-.seen:not(:open) > summary::after {
-  content: "not seen";
+.seen[open] .status-icon::before {
+  content: "✓";
+  margin-right: 5px;
+  color: green;
 }
 
-.seen:open > summary::marker {
-  content: "\2713"; /* ✓ */
+.seen:not([open]) .status-text::after {
+  content: " not seen";
 }
 
-.seen:open > summary::after {
-  content: "seen!";
+.seen[open] .status-text::after {
+  content: " seen!";
   color: green;
 }
 
